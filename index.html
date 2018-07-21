@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+<div class="look">
+<h1>Online Gokautomaat</h1>
+<p>De groote van uw inzet: <span id="hoeveelheid1"></span> + <span id="hoeveelheid2"></span> = <span id="hoeveelheid3"> </span> euro</p>
+
+<div class="wrapper">
+    <input type="range" min="0" max="1000" value="500" class="slider" id="lengteslider1">
+    <h4>1 t/m 1000 euro:</h4>
+    <input type="range" min="0" max="100" value="50" class="slider" id="lengteslider2">
+    <h4>1 t/m 100 euro: </h4>
+</div>
+</div>
+<script>
+    var slider1 = document.getElementById("lengteslider1");
+    var slider2 = document.getElementById("lengteslider2");
+    var inzet1 = document.getElementById("hoeveelheid1");
+    var inzet2 = document.getElementById("hoeveelheid2");
+    var inzet3 = document.getElementById("hoeveelheid3");
+    inzet3.innerHTML = Number(slider1.value) + Number(slider2.value);
+        inzet1.innerHTML = slider1.value;
+        slider1.oninput = function () {
+            inzet1.innerHTML = this.value;
+            inzet3.innerHTML = Number(slider1.value) + Number(slider2.value);
+        };
+        inzet2.innerHTML = slider2.value;
+        slider2.oninput = function () {
+            inzet2.innerHTML = this.value;
+            inzet3.innerHTML = Number(slider1.value) + Number(slider2.value);
+        };
+
+
+
+</script>
+</body>
+</html>
